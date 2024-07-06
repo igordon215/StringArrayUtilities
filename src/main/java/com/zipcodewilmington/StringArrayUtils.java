@@ -9,6 +9,7 @@ public class StringArrayUtils {
      * @return first element of specified array
      */ // TODO
     public static String getFirstElement(String[] array) {
+        //variable pre declared in (String[] array)
         return array[0];
     }
 
@@ -17,6 +18,7 @@ public class StringArrayUtils {
      * @return second element in specified array
      */
     public static String getSecondElement(String[] array) {
+        //variable pre declared in (String[] array)
         return array[1];
     }
 
@@ -25,7 +27,10 @@ public class StringArrayUtils {
      * @return last element in specified array
      */ // TODO
     public static String getLastElement(String[] array) {
-        return null;
+        //declare (type)=int (variableName)=lastElement array=(input)(help method)
+        int lastElement = array.length - 1;
+        //.length this gets the total size of the array, capacity
+        return array[lastElement];
     }
 
     /**
@@ -33,7 +38,9 @@ public class StringArrayUtils {
      * @return second to last element in specified array
      */ // TODO
     public static String getSecondToLastElement(String[] array) {
-        return null;
+        //.length-2 = minus the last two position because the index begins at zero.
+        int getSecondToLastPosition = array.length - 2;
+        return array[getSecondToLastPosition];
     }
 
     /**
@@ -42,8 +49,19 @@ public class StringArrayUtils {
      * @return true if the array contains the specified `value`
      */ // TODO
     public static boolean contains(String[] array, String value) {
+        //We have two input values given, array and value
+        //We will have to compare the value against the array
+        //.length checks the size of the array int.
+        for (int i = 0; i < array.length; i++) {
+            if (array[i].equals(value)) {
+                //(Variable-Array).equals (string method)(variable-value) <-- if statement
+                //A For loop is better to return true so that you continue..
+                //..to check the rest of the array for the equal value
+                return true;
+            }
+        }
         return false;
-    }
+}
 
     /**
      * @param array of String objects
